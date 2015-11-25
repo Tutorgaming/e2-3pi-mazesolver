@@ -139,13 +139,13 @@ void maze_solve() {
 
       // Now read the sensors and check the intersection type.
       unsigned int sensors[5];
-      read_line(sensors,IR_EMITTERS_ON);
+      read_line_white(sensors,IR_EMITTERS_ON);
 
       // Check for left and right exits.
-      if(sensors[0] > 100){
+      if(sensors[0] < 200){
          found_left = 1;
       }
-      if(sensors[4] > 100){
+      if(sensors[4] < 200){
          found_right = 1;
       }
 
@@ -155,15 +155,14 @@ void maze_solve() {
       delay_ms(200);
 
       // Check for a straight exit.
-      read_line(sensors,IR_EMITTERS_ON);
-      if(sensors[1] > 200 || sensors[2] > 200 || sensors[3] > 200) {
+      read_line_white(sensors,IR_EMITTERS_ON);
+      if(sensors[1] < 200 || sensors[2] < 200 || sensors[3] < 200) {
          found_straight = 1;
       }
 
       // Check for the ending spot.
-      // If all three middle sensors are on dark black, we have
-      // solved the maze.
-      if(sensors[1] > 600 && sensors[2] > 600 && sensors[3] > 600) {
+      // If all 3 center sensors are on white, we have solved the maze.
+      if(sensors[1] < 200 && sensors[2] < 200 && sensors[3] < 200) {
          break;
       }
 
@@ -230,13 +229,13 @@ void maze_solve() {
 
          // Now read the sensors and check the intersection type.
          unsigned int sensors[5];
-         read_line(sensors,IR_EMITTERS_ON);
+         read_line_white(sensors,IR_EMITTERS_ON);
 
          // Check for left and right exits.
-         if(sensors[0] > 100) {
+         if(sensors[0] < 200) {
             found_left = 1;
          }
-         if(sensors[4] > 100) {
+         if(sensors[4] < 200) {
             found_right = 1;
          }
 
@@ -246,8 +245,8 @@ void maze_solve() {
          delay_ms(200);
 
          // Check for a straight exit.
-         read_line(sensors,IR_EMITTERS_ON);
-         if(sensors[1] > 200 || sensors[2] > 200 || sensors[3] > 200) {
+         read_line_white(sensors,IR_EMITTERS_ON);
+         if(sensors[1] < 200 || sensors[2] < 200 || sensors[3] < 200) {
             found_straight = 1;
          }
 
@@ -319,9 +318,9 @@ void maze_solve() {
             turn(pathsol[i]);
             i+=1;
             unsigned int sensors[5];
-            read_line(sensors,IR_EMITTERS_ON);
+            read_line_white(sensors,IR_EMITTERS_ON);
             // The end is reached.
-            if(sensors[1] > 600 && sensors[2] > 600 && sensors[3] > 600) {
+            if(sensors[1] < 200 && sensors[2] < 200 && sensors[3] < 200) {
                pathsol_length=0;
             }
       }

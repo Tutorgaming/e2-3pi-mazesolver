@@ -90,6 +90,8 @@ Discarded input sections
  .text._pololu_atmel_studio_6_workaround
                 0x00000000        0xc main.o
  .data.w.2035   0x00000000        0x1 main.o
+ .progmem.data.go
+                0x00000000        0xd main.o
  .text          0x00000000        0x0 maze-solve.o
  .data          0x00000000        0x0 maze-solve.o
  .bss           0x00000000        0x0 maze-solve.o
@@ -295,7 +297,7 @@ Discarded input sections
                 0x00000000        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
  .text.read_line_sensors_calibrated
                 0x00000000        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
- .text.read_line_white
+ .text.read_line
                 0x00000000       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
  .text.get_line_sensors_calibrated_minimum_on
                 0x00000000        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
@@ -750,7 +752,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x26c0
+.text           0x00000000     0x26b6
  *(.vectors)
  .vectors       0x00000000       0x68 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
                 0x00000000                __vector_default
@@ -767,54 +769,52 @@ END GROUP
  .progmem.data.levels
                 0x00000068        0xe bargraph.o
                 0x00000068                levels
- .progmem.data.go
-                0x00000076        0xd main.o
-                0x00000076                go
  .progmem.data.welcome
-                0x00000083        0xa main.o
-                0x00000083                welcome
+                0x00000076        0xa main.o
+                0x00000076                welcome
  .progmem.data.demo_name_line2
-                0x0000008d        0x7 main.o
-                0x0000008d                demo_name_line2
+                0x00000080        0x7 main.o
+                0x00000080                demo_name_line2
  .progmem.data.demo_name_line1
-                0x00000094        0x5 main.o
-                0x00000094                demo_name_line1
+                0x00000087        0x5 main.o
+                0x00000087                demo_name_line1
  .progmem.data.welcome_line2
-                0x00000099        0x9 main.o
-                0x00000099                welcome_line2
+                0x0000008c        0x9 main.o
+                0x0000008c                welcome_line2
  .progmem.data.welcome_line1
-                0x000000a2        0x8 main.o
-                0x000000a2                welcome_line1
-                0x000000aa                . = ALIGN (0x2)
+                0x00000095        0x8 main.o
+                0x00000095                welcome_line1
+                0x0000009e                . = ALIGN (0x2)
+ *fill*         0x0000009d        0x1 
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x000000aa                __ctors_start = .
+                0x0000009e                __ctors_start = .
  *(.ctors)
-                0x000000aa                __ctors_end = .
-                0x000000aa                __dtors_start = .
+                0x0000009e                __ctors_end = .
+                0x0000009e                __dtors_start = .
  *(.dtors)
- .dtors         0x000000aa        0x2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
-                0x000000ac                __dtors_end = .
+ .dtors         0x0000009e        0x2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
+                0x000000a0                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x000000ac        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
-                0x000000ac                __init
+ .init0         0x000000a0        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
+                0x000000a0                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x000000ac        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
+ .init2         0x000000a0        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x000000b8       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_copy_data.o)
-                0x000000b8                __do_copy_data
- .init4         0x000000ce       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_clear_bss.o)
-                0x000000ce                __do_clear_bss
+ .init4         0x000000ac       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_copy_data.o)
+                0x000000ac                __do_copy_data
+ .init4         0x000000c2       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_clear_bss.o)
+                0x000000c2                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -825,359 +825,359 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x000000de        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
+ .init9         0x000000d2        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
  *(.init9)
  *(.text)
- .text          0x000000e6        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
-                0x000000e6                __vector_22
-                0x000000e6                __vector_1
-                0x000000e6                __vector_24
-                0x000000e6                __vector_12
-                0x000000e6                __bad_interrupt
-                0x000000e6                __vector_6
-                0x000000e6                __vector_3
-                0x000000e6                __vector_23
-                0x000000e6                __vector_25
-                0x000000e6                __vector_11
-                0x000000e6                __vector_17
-                0x000000e6                __vector_19
-                0x000000e6                __vector_7
-                0x000000e6                __vector_5
-                0x000000e6                __vector_4
-                0x000000e6                __vector_2
-                0x000000e6                __vector_21
-                0x000000e6                __vector_15
-                0x000000e6                __vector_8
-                0x000000e6                __vector_14
-                0x000000e6                __vector_10
-                0x000000e6                __vector_16
-                0x000000e6                __vector_18
-                0x000000e6                __vector_20
-                0x000000ea                . = ALIGN (0x2)
+ .text          0x000000da        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5/crtatmega328p.o
+                0x000000da                __vector_22
+                0x000000da                __vector_1
+                0x000000da                __vector_24
+                0x000000da                __vector_12
+                0x000000da                __bad_interrupt
+                0x000000da                __vector_6
+                0x000000da                __vector_3
+                0x000000da                __vector_23
+                0x000000da                __vector_25
+                0x000000da                __vector_11
+                0x000000da                __vector_17
+                0x000000da                __vector_19
+                0x000000da                __vector_7
+                0x000000da                __vector_5
+                0x000000da                __vector_4
+                0x000000da                __vector_2
+                0x000000da                __vector_21
+                0x000000da                __vector_15
+                0x000000da                __vector_8
+                0x000000da                __vector_14
+                0x000000da                __vector_10
+                0x000000da                __vector_16
+                0x000000da                __vector_18
+                0x000000da                __vector_20
+                0x000000de                . = ALIGN (0x2)
  *(.text.*)
  .text.load_custom_characters
-                0x000000ea       0x4a bargraph.o
-                0x000000ea                load_custom_characters
+                0x000000de       0x4a bargraph.o
+                0x000000de                load_custom_characters
  .text.display_readings
-                0x00000134       0x8e bargraph.o
-                0x00000134                display_readings
+                0x00000128       0x8e bargraph.o
+                0x00000128                display_readings
  .text.follow_segment
-                0x000001c2      0x148 follow-segment.o
-                0x000001c2                follow_segment
+                0x000001b6      0x152 follow-segment.o
+                0x000001b6                follow_segment
  .text.initialize
-                0x0000030a      0x176 main.o
-                0x0000030a                initialize
+                0x00000308      0x176 main.o
+                0x00000308                initialize
  .text.startup.main
-                0x00000480        0xa main.o
-                0x00000480                main
+                0x0000047e        0xa main.o
+                0x0000047e                main
  .text.select_turn
-                0x0000048a       0x1c maze-solve.o
-                0x0000048a                select_turn
+                0x00000488       0x1c maze-solve.o
+                0x00000488                select_turn
  .text.record_intersec
-                0x000004a6       0x36 maze-solve.o
-                0x000004a6                record_intersec
+                0x000004a4       0x36 maze-solve.o
+                0x000004a4                record_intersec
  .text.simplify_path
-                0x000004dc       0x96 maze-solve.o
-                0x000004dc                simplify_path
+                0x000004da       0x96 maze-solve.o
+                0x000004da                simplify_path
  .text.maze_solve
-                0x00000572      0x3ae maze-solve.o
-                0x00000572                maze_solve
- .text.turn     0x00000920       0x3e turn.o
-                0x00000920                turn
+                0x00000570      0x3a6 maze-solve.o
+                0x00000570                maze_solve
+ .text.turn     0x00000916       0x3e turn.o
+                0x00000916                turn
  .text._ZN15OrangutanAnalog7setModeEh.part.0
-                0x0000095e        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
+                0x00000954        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
  .text._ZN15OrangutanAnalog7setModeEh
-                0x0000096a       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
-                0x0000096a                _ZN15OrangutanAnalog7setModeEh
+                0x00000960       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
+                0x00000960                _ZN15OrangutanAnalog7setModeEh
  .text._ZN15OrangutanAnalog7getModeEv
-                0x00000980        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
-                0x00000980                _ZN15OrangutanAnalog7getModeEv
+                0x00000976        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
+                0x00000976                _ZN15OrangutanAnalog7getModeEv
  .text._ZN15OrangutanAnalog16conversionResultEv
-                0x0000098c       0x1a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
-                0x0000098c                _ZN15OrangutanAnalog16conversionResultEv
+                0x00000982       0x1a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
+                0x00000982                _ZN15OrangutanAnalog16conversionResultEv
  .text._ZN15OrangutanAnalog15startConversionEhh
-                0x000009a6       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
-                0x000009a6                _ZN15OrangutanAnalog15startConversionEhh
+                0x0000099c       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
+                0x0000099c                _ZN15OrangutanAnalog15startConversionEhh
  .text._ZN15OrangutanAnalog11readAverageEhj
-                0x000009d4       0x8c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
-                0x000009d4                _ZN15OrangutanAnalog11readAverageEhj
+                0x000009ca       0x8c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
+                0x000009ca                _ZN15OrangutanAnalog11readAverageEhj
  .text._ZN15OrangutanAnalog12toMillivoltsEj
-                0x00000a60       0x5c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
-                0x00000a60                _ZN15OrangutanAnalog12toMillivoltsEj
+                0x00000a56       0x5c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
+                0x00000a56                _ZN15OrangutanAnalog12toMillivoltsEj
  .text._ZN15OrangutanAnalog21readAverageMillivoltsEhj
-                0x00000abc        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
-                0x00000abc                _ZN15OrangutanAnalog21readAverageMillivoltsEhj
+                0x00000ab2        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
+                0x00000ab2                _ZN15OrangutanAnalog21readAverageMillivoltsEhj
  .text._ZN15OrangutanAnalog25readBatteryMillivolts_3piEv
-                0x00000ac6       0x3a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
-                0x00000ac6                _ZN15OrangutanAnalog25readBatteryMillivolts_3piEv
+                0x00000abc       0x3a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
+                0x00000abc                _ZN15OrangutanAnalog25readBatteryMillivolts_3piEv
  .text.read_battery_millivolts_3pi
-                0x00000b00        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
-                0x00000b00                read_battery_millivolts_3pi
+                0x00000af6        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
+                0x00000af6                read_battery_millivolts_3pi
  .text._ZL16currentCharacterv
-                0x00000b06       0x3a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x00000afc       0x3a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
  .text._ZL9getNumberv
-                0x00000b40       0x50 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x00000b36       0x50 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
  .text._ZN15OrangutanBuzzer5init2Ev
-                0x00000b90       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
-                0x00000b90                _ZN15OrangutanBuzzer5init2Ev
+                0x00000b86       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x00000b86                _ZN15OrangutanBuzzer5init2Ev
  .text._ZN15OrangutanBuzzer13playFrequencyEjjh
-                0x00000bbe      0x178 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
-                0x00000bbe                _ZN15OrangutanBuzzer13playFrequencyEjjh
+                0x00000bb4      0x178 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x00000bb4                _ZN15OrangutanBuzzer13playFrequencyEjjh
  .text._ZN15OrangutanBuzzer8playNoteEhjh
-                0x00000d36       0xa8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
-                0x00000d36                _ZN15OrangutanBuzzer8playNoteEhjh
+                0x00000d2c       0xa8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x00000d2c                _ZN15OrangutanBuzzer8playNoteEhjh
  .text._ZL8nextNotev
-                0x00000dde      0x296 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x00000dd4      0x296 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
  .text.__vector_13
-                0x00001074       0xa2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
-                0x00001074                __vector_13
+                0x0000106a       0xa2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x0000106a                __vector_13
  .text._ZN15OrangutanBuzzer9isPlayingEv
-                0x00001116       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
-                0x00001116                _ZN15OrangutanBuzzer9isPlayingEv
+                0x0000110c       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x0000110c                _ZN15OrangutanBuzzer9isPlayingEv
  .text.is_playing
-                0x00001134        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
-                0x00001134                is_playing
+                0x0000112a        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x0000112a                is_playing
  .text._ZN15OrangutanBuzzer4playEPKc
-                0x0000113a       0x1a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
-                0x0000113a                _ZN15OrangutanBuzzer4playEPKc
- .text.play     0x00001154        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
-                0x00001154                play
+                0x00001130       0x1a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x00001130                _ZN15OrangutanBuzzer4playEPKc
+ .text.play     0x0000114a        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x0000114a                play
  .text._ZN15OrangutanBuzzer20playFromProgramSpaceEPKc
-                0x0000115a       0x1c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
-                0x0000115a                _ZN15OrangutanBuzzer20playFromProgramSpaceEPKc
+                0x00001150       0x1c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x00001150                _ZN15OrangutanBuzzer20playFromProgramSpaceEPKc
  .text.play_from_program_space
-                0x00001176        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
-                0x00001176                play_from_program_space
+                0x0000116c        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x0000116c                play_from_program_space
  .text.delay_us.constprop.0
-                0x0000117c       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x00001172       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
  .text._ZN12OrangutanLCD8busyWaitEv
-                0x00001190       0x60 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x00001190                _ZN12OrangutanLCD8busyWaitEv
+                0x00001186       0x60 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x00001186                _ZN12OrangutanLCD8busyWaitEv
  .text._ZN12OrangutanLCD8sendDataEh
-                0x000011f0       0x3c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x000011f0                _ZN12OrangutanLCD8sendDataEh
+                0x000011e6       0x3c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x000011e6                _ZN12OrangutanLCD8sendDataEh
  .text._ZN12OrangutanLCD4sendEhhh
-                0x0000122c       0x6e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x0000122c                _ZN12OrangutanLCD4sendEhhh
+                0x00001222       0x6e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x00001222                _ZN12OrangutanLCD4sendEhhh
  .text._ZN12OrangutanLCD8send_cmdEh
-                0x0000129a        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x0000129a                _ZN12OrangutanLCD8send_cmdEh
+                0x00001290        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x00001290                _ZN12OrangutanLCD8send_cmdEh
  .text._ZN12OrangutanLCD9send_dataEh
-                0x000012a4        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x000012a4                _ZN12OrangutanLCD9send_dataEh
+                0x0000129a        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x0000129a                _ZN12OrangutanLCD9send_dataEh
  .text._ZN12OrangutanLCD19loadCustomCharacterEPKch
-                0x000012ae       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x000012ae                _ZN12OrangutanLCD19loadCustomCharacterEPKch
+                0x000012a4       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x000012a4                _ZN12OrangutanLCD19loadCustomCharacterEPKch
  .text.lcd_load_custom_character
-                0x000012f6        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x000012f6                lcd_load_custom_character
+                0x000012ec        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x000012ec                lcd_load_custom_character
  .text.print_character
-                0x000012fc        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x000012fc                print_character
+                0x000012f2        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x000012f2                print_character
  .text._ZN12OrangutanLCD13send_4bit_cmdEh
-                0x00001302        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x00001302                _ZN12OrangutanLCD13send_4bit_cmdEh
+                0x000012f8        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x000012f8                _ZN12OrangutanLCD13send_4bit_cmdEh
  .text._ZN12OrangutanLCD5init2Ev
-                0x0000130c       0x7e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x0000130c                _ZN12OrangutanLCD5init2Ev
+                0x00001302       0x7e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x00001302                _ZN12OrangutanLCD5init2Ev
  .text._ZN12OrangutanLCD5clearEv
-                0x0000138a       0x52 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x0000138a                _ZN12OrangutanLCD5clearEv
- .text.clear    0x000013dc        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x000013dc                clear
+                0x00001380       0x52 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x00001380                _ZN12OrangutanLCD5clearEv
+ .text.clear    0x000013d2        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x000013d2                clear
  .text._ZN12OrangutanLCD5printEPKc
-                0x000013e2       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x000013e2                _ZN12OrangutanLCD5printEPKc
- .text.print    0x000013fa        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x000013fa                print
+                0x000013d8       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x000013d8                _ZN12OrangutanLCD5printEPKc
+ .text.print    0x000013f0        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x000013f0                print
  .text._ZN12OrangutanLCD21printFromProgramSpaceEPKc
-                0x00001400       0x1c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x00001400                _ZN12OrangutanLCD21printFromProgramSpaceEPKc
+                0x000013f6       0x1c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x000013f6                _ZN12OrangutanLCD21printFromProgramSpaceEPKc
  .text.print_from_program_space
-                0x0000141c        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x0000141c                print_from_program_space
+                0x00001412        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x00001412                print_from_program_space
  .text._ZN12OrangutanLCD5printEm
-                0x00001422       0x6c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x00001422                _ZN12OrangutanLCD5printEm
+                0x00001418       0x6c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x00001418                _ZN12OrangutanLCD5printEm
  .text._ZN12OrangutanLCD5printEl
-                0x0000148e       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x0000148e                _ZN12OrangutanLCD5printEl
+                0x00001484       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x00001484                _ZN12OrangutanLCD5printEl
  .text.print_long
-                0x000014c6        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x000014c6                print_long
+                0x000014bc        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x000014bc                print_long
  .text._ZN12OrangutanLCD6gotoXYEhh
-                0x000014cc       0x40 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x000014cc                _ZN12OrangutanLCD6gotoXYEhh
+                0x000014c2       0x40 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x000014c2                _ZN12OrangutanLCD6gotoXYEhh
  .text.lcd_goto_xy
-                0x0000150c        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x0000150c                lcd_goto_xy
+                0x00001502        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x00001502                lcd_goto_xy
  .text._ZN16OrangutanDigital9setOutputEhh
-                0x00001512       0x82 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
-                0x00001512                _ZN16OrangutanDigital9setOutputEhh
+                0x00001508       0x82 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
+                0x00001508                _ZN16OrangutanDigital9setOutputEhh
  .text._ZN15OrangutanMotors5init2Ev
-                0x00001594       0x3e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
-                0x00001594                _ZN15OrangutanMotors5init2Ev
+                0x0000158a       0x3e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
+                0x0000158a                _ZN15OrangutanMotors5init2Ev
  .text._ZN15OrangutanMotors4initEv
-                0x000015d2       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
-                0x000015d2                _ZN15OrangutanMotors4initEv
+                0x000015c8       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
+                0x000015c8                _ZN15OrangutanMotors4initEv
  .text._ZN15OrangutanMotors10setM1SpeedEi
-                0x000015e6       0x3a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
-                0x000015e6                _ZN15OrangutanMotors10setM1SpeedEi
+                0x000015dc       0x3a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
+                0x000015dc                _ZN15OrangutanMotors10setM1SpeedEi
  .text._ZN15OrangutanMotors10setM2SpeedEi
-                0x00001620       0x42 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
-                0x00001620                _ZN15OrangutanMotors10setM2SpeedEi
+                0x00001616       0x42 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
+                0x00001616                _ZN15OrangutanMotors10setM2SpeedEi
  .text._ZN15OrangutanMotors9setSpeedsEii
-                0x00001662       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
-                0x00001662                _ZN15OrangutanMotors9setSpeedsEii
+                0x00001658       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
+                0x00001658                _ZN15OrangutanMotors9setSpeedsEii
  .text.set_motors
-                0x00001678        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
-                0x00001678                set_motors
+                0x0000166e        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
+                0x0000166e                set_motors
  .text._ZN20OrangutanPushbuttons5init2Ev
-                0x0000167e       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
-                0x0000167e                _ZN20OrangutanPushbuttons5init2Ev
+                0x00001674       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
+                0x00001674                _ZN20OrangutanPushbuttons5init2Ev
  .text._ZN20OrangutanPushbuttons4initEv
-                0x0000169e       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
-                0x0000169e                _ZN20OrangutanPushbuttons4initEv
+                0x00001694       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
+                0x00001694                _ZN20OrangutanPushbuttons4initEv
  .text._ZN20OrangutanPushbuttons14waitForReleaseEh
-                0x000016b2       0x24 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
-                0x000016b2                _ZN20OrangutanPushbuttons14waitForReleaseEh
+                0x000016a8       0x24 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
+                0x000016a8                _ZN20OrangutanPushbuttons14waitForReleaseEh
  .text.wait_for_button_release
-                0x000016d6        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
-                0x000016d6                wait_for_button_release
+                0x000016cc        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
+                0x000016cc                wait_for_button_release
  .text._ZN20OrangutanPushbuttons9isPressedEh
-                0x000016dc       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
-                0x000016dc                _ZN20OrangutanPushbuttons9isPressedEh
+                0x000016d2       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
+                0x000016d2                _ZN20OrangutanPushbuttons9isPressedEh
  .text.button_is_pressed
-                0x000016fe        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
-                0x000016fe                button_is_pressed
+                0x000016f4        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
+                0x000016f4                button_is_pressed
  .text.__vector_9
-                0x00001704       0x74 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
-                0x00001704                __vector_9
+                0x000016fa       0x74 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
+                0x000016fa                __vector_9
  .text._ZN13OrangutanTime17delayMillisecondsEj
-                0x00001778       0x1c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
-                0x00001778                _ZN13OrangutanTime17delayMillisecondsEj
+                0x0000176e       0x1c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
+                0x0000176e                _ZN13OrangutanTime17delayMillisecondsEj
  .text.delay_ms
-                0x00001794        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
-                0x00001794                delay_ms
+                0x0000178a        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
+                0x0000178a                delay_ms
  .text._ZN13OrangutanTime5init2Ev
-                0x0000179a       0x30 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
-                0x0000179a                _ZN13OrangutanTime5init2Ev
+                0x00001790       0x30 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
+                0x00001790                _ZN13OrangutanTime5init2Ev
  .text._ZN13OrangutanTime4initEv
-                0x000017ca       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
-                0x000017ca                _ZN13OrangutanTime4initEv
+                0x000017c0       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
+                0x000017c0                _ZN13OrangutanTime4initEv
  .text._ZN13OrangutanTime5resetEv
-                0x000017de       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
-                0x000017de                _ZN13OrangutanTime5resetEv
+                0x000017d4       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
+                0x000017d4                _ZN13OrangutanTime5resetEv
  .text.calibrate_line_sensors
-                0x0000180c        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
-                0x0000180c                calibrate_line_sensors
- .text.read_line
-                0x00001818       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
-                0x00001818                read_line
+                0x00001802        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
+                0x00001802                calibrate_line_sensors
+ .text.read_line_white
+                0x0000180e       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
+                0x0000180e                read_line_white
  .text._ZN9Pololu3pi4initEjh
-                0x00001828       0x5c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
-                0x00001828                _ZN9Pololu3pi4initEjh
+                0x0000181e       0x5c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
+                0x0000181e                _ZN9Pololu3pi4initEjh
  .text.pololu_3pi_init
-                0x00001884        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
-                0x00001884                pololu_3pi_init
+                0x0000187a        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
+                0x0000187a                pololu_3pi_init
  .text.exit._GLOBAL__sub_D_pololu_3pi_init
-                0x0000188c        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
+                0x00001882        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
  .text.delay_us
-                0x00001896       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x0000188c       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
  .text._ZN16OrangutanDigital14getIORegistersEP8IOStructh
-                0x000018a6       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x000018a6                _ZN16OrangutanDigital14getIORegistersEP8IOStructh
+                0x0000189c       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x0000189c                _ZN16OrangutanDigital14getIORegistersEP8IOStructh
  .text._ZN16PololuQTRSensors4initEhhh
-                0x00001920       0x5a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x00001920                _ZN16PololuQTRSensors4initEhhh
+                0x00001916       0x5a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x00001916                _ZN16PololuQTRSensors4initEhhh
  .text._ZN16PololuQTRSensors11emittersOffEv
-                0x0000197a       0x2a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x0000197a                _ZN16PololuQTRSensors11emittersOffEv
+                0x00001970       0x2a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x00001970                _ZN16PololuQTRSensors11emittersOffEv
  .text._ZN16PololuQTRSensors10emittersOnEv
-                0x000019a4       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x000019a4                _ZN16PololuQTRSensors10emittersOnEv
+                0x0000199a       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x0000199a                _ZN16PololuQTRSensors10emittersOnEv
  .text._ZN18PololuQTRSensorsRC4initEPhhjh
-                0x000019cc       0xaa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x000019cc                _ZN18PololuQTRSensorsRC4initEPhhjh
+                0x000019c2       0xaa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x000019c2                _ZN18PololuQTRSensorsRC4initEPhhjh
  .text._ZN18PololuQTRSensorsRC11readPrivateEPj
-                0x00001a76      0x1b0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x00001a76                _ZN18PololuQTRSensorsRC11readPrivateEPj
+                0x00001a6c      0x1b0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x00001a6c                _ZN18PololuQTRSensorsRC11readPrivateEPj
  .text._ZN22PololuQTRSensorsAnalog11readPrivateEPj
-                0x00001c26       0xfa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x00001c26                _ZN22PololuQTRSensorsAnalog11readPrivateEPj
+                0x00001c1c       0xfa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x00001c1c                _ZN22PololuQTRSensorsAnalog11readPrivateEPj
  .text._ZN16PololuQTRSensors4readEPjh
-                0x00001d20       0xba c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x00001d20                _ZN16PololuQTRSensors4readEPjh
+                0x00001d16       0xba c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x00001d16                _ZN16PololuQTRSensors4readEPjh
  .text._ZN16PololuQTRSensors16calibrateOnOrOffEPPjS1_h
-                0x00001dda      0x202 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x00001dda                _ZN16PololuQTRSensors16calibrateOnOrOffEPPjS1_h
+                0x00001dd0      0x202 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x00001dd0                _ZN16PololuQTRSensors16calibrateOnOrOffEPPjS1_h
  .text._ZN16PololuQTRSensors9calibrateEh
-                0x00001fdc       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x00001fdc                _ZN16PololuQTRSensors9calibrateEh
+                0x00001fd2       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x00001fd2                _ZN16PololuQTRSensors9calibrateEh
  .text._ZN16PololuQTRSensors14readCalibratedEPjh
-                0x00002024      0x15a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x00002024                _ZN16PololuQTRSensors14readCalibratedEPjh
+                0x0000201a      0x15a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x0000201a                _ZN16PololuQTRSensors14readCalibratedEPjh
  .text._ZN16PololuQTRSensors8readLineEPjhh
-                0x0000217e       0xea c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x0000217e                _ZN16PololuQTRSensors8readLineEPjhh
+                0x00002174       0xea c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x00002174                _ZN16PololuQTRSensors8readLineEPjhh
  .text._ZN16PololuQTRSensorsD2Ev
-                0x00002268       0x3c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
-                0x00002268                _ZN16PololuQTRSensorsD1Ev
-                0x00002268                _ZN16PololuQTRSensorsD2Ev
+                0x0000225e       0x3c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+                0x0000225e                _ZN16PololuQTRSensorsD1Ev
+                0x0000225e                _ZN16PololuQTRSensorsD2Ev
  .text.libgcc.div
-                0x000022a4       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodqi4.o)
-                0x000022a4                __udivmodqi4
+                0x0000229a       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodqi4.o)
+                0x0000229a                __udivmodqi4
  .text.libgcc.div
-                0x000022bc       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodhi4.o)
-                0x000022bc                __udivmodhi4
+                0x000022b2       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodhi4.o)
+                0x000022b2                __udivmodhi4
  .text.libgcc.div
-                0x000022e4       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_divmodhi4.o)
-                0x000022e4                _div
-                0x000022e4                __divmodhi4
+                0x000022da       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_divmodhi4.o)
+                0x000022da                _div
+                0x000022da                __divmodhi4
  .text.libgcc.div
-                0x0000230c       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodsi4.o)
-                0x0000230c                __udivmodsi4
+                0x00002302       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_udivmodsi4.o)
+                0x00002302                __udivmodsi4
  .text.libgcc.div
-                0x00002350       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_divmodsi4.o)
-                0x00002350                __divmodsi4
+                0x00002346       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_divmodsi4.o)
+                0x00002346                __divmodsi4
  .text.libgcc.div
-                0x0000237e       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_negsi2.o)
-                0x0000237e                __negsi2
+                0x00002374       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_negsi2.o)
+                0x00002374                __negsi2
  .text.libgcc.mul
-                0x0000238e       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_umulhisi3.o)
-                0x0000238e                __umulhisi3
+                0x00002384       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_umulhisi3.o)
+                0x00002384                __umulhisi3
  .text.libgcc.mul
-                0x000023ac       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_muluhisi3.o)
-                0x000023ac                __muluhisi3
+                0x000023a2       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_muluhisi3.o)
+                0x000023a2                __muluhisi3
  .text.libgcc.mul
-                0x000023c2       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulshisi3.o)
-                0x000023c2                __mulshisi3
-                0x000023c8                __mulohisi3
+                0x000023b8       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_mulshisi3.o)
+                0x000023b8                __mulshisi3
+                0x000023be                __mulohisi3
  .text.libgcc.prologue
-                0x000023d2       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_prologue.o)
-                0x000023d2                __prologue_saves__
+                0x000023c8       0x38 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_prologue.o)
+                0x000023c8                __prologue_saves__
  .text.libgcc.prologue
-                0x0000240a       0x36 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_epilogue.o)
-                0x0000240a                __epilogue_restores__
- .text.libgcc   0x00002440        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_tablejump2.o)
-                0x00002440                __tablejump2__
+                0x00002400       0x36 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_epilogue.o)
+                0x00002400                __epilogue_restores__
+ .text.libgcc   0x00002436        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_tablejump2.o)
+                0x00002436                __tablejump2__
  .text.avr-libc
-                0x0000244c      0x25a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x0000244c                malloc
-                0x00002576                free
-                0x000026a6                . = ALIGN (0x2)
+                0x00002442      0x25a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x00002442                malloc
+                0x0000256c                free
+                0x0000269c                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000026a6        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
-                0x000026a6                _exit
-                0x000026a6                exit
+ .fini9         0x0000269c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
+                0x0000269c                _exit
+                0x0000269c                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
  *(.fini7)
  *(.fini7)
  *(.fini6)
- .fini6         0x000026a6       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_dtors.o)
-                0x000026a6                __do_global_dtors
+ .fini6         0x0000269c       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_dtors.o)
+                0x0000269c                __do_global_dtors
  *(.fini6)
  *(.fini5)
  *(.fini5)
@@ -1190,11 +1190,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000026bc        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x000026b2        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000026c0                _etext = .
+                0x000026b6                _etext = .
 
-.data           0x00800100       0x64 load address 0x000026c0
+.data           0x00800100       0xc4 load address 0x000026b6
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanAnalog.o)
@@ -1216,77 +1216,79 @@ END GROUP
  .rodata        0x00800138        0x5 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
  *(.rodata*)
  .rodata.str1.1
-                0x0080013d        0xf main.o
+                0x0080013d        0x6 follow-segment.o
  .rodata.str1.1
-                0x0080014c       0x18 maze-solve.o
+                0x00800143       0x69 main.o
+ .rodata.str1.1
+                0x008001ac       0x18 maze-solve.o
                                  0x24 (size before relaxing)
  *(.gnu.linkonce.d*)
-                0x00800164                . = ALIGN (0x2)
-                0x00800164                _edata = .
-                0x00800164                PROVIDE (__data_end, .)
+                0x008001c4                . = ALIGN (0x2)
+                0x008001c4                _edata = .
+                0x008001c4                PROVIDE (__data_end, .)
 
-.bss            0x00800164      0x21c
-                0x00800164                PROVIDE (__bss_start, .)
+.bss            0x008001c4      0x21c
+                0x008001c4                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x00800164        0x9 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
-                0x00800164                buzzerSequence
-                0x00800166                buzzerInitialized
- .bss           0x0080016d        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x0080016d                lcdTimeout
-                0x00800171                col
-                0x00800172                row
-                0x00800173                printf_chars
- .bss           0x00800175        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
-                0x00800175                us_over_10
-                0x00800177                msCounter
-                0x0080017b                tickCount
- .bss           0x0080017f       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
- .bss           0x008001c3        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
+ .bss           0x008001c4        0x9 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanBuzzer.o)
+                0x008001c4                buzzerSequence
+                0x008001c6                buzzerInitialized
+ .bss           0x008001cd        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x008001cd                lcdTimeout
+                0x008001d1                col
+                0x008001d2                row
+                0x008001d3                printf_chars
+ .bss           0x008001d5        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
+                0x008001d5                us_over_10
+                0x008001d7                msCounter
+                0x008001db                tickCount
+ .bss           0x008001df       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(Pololu3pi.o)
+ .bss           0x00800223        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(PololuQTRSensors.o)
  *(.bss*)
  .bss.pathsol_length
-                0x008001c7        0x1 maze-solve.o
-                0x008001c7                pathsol_length
- .bss.pathsol   0x008001c8       0x64 maze-solve.o
-                0x008001c8                pathsol
+                0x00800227        0x1 maze-solve.o
+                0x00800227                pathsol_length
+ .bss.pathsol   0x00800228       0x64 maze-solve.o
+                0x00800228                pathsol
  .bss.paths_length
-                0x0080022c        0x1 maze-solve.o
-                0x0080022c                paths_length
- .bss.paths     0x0080022d        0xa maze-solve.o
-                0x0080022d                paths
+                0x0080028c        0x1 maze-solve.o
+                0x0080028c                paths_length
+ .bss.paths     0x0080028d        0xa maze-solve.o
+                0x0080028d                paths
  .bss.path_length
-                0x00800237        0x1 maze-solve.o
-                0x00800237                path_length
- .bss.path      0x00800238       0x64 maze-solve.o
-                0x00800238                path
+                0x00800297        0x1 maze-solve.o
+                0x00800297                path_length
+ .bss.path      0x00800298       0x64 maze-solve.o
+                0x00800298                path
  .bss._ZZN12OrangutanLCD4initEvE11initialized
-                0x0080029c        0x1 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
-                0x0080029c                _ZZN12OrangutanLCD4initEvE11initialized
+                0x008002fc        0x1 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanLCD.o)
+                0x008002fc                _ZZN12OrangutanLCD4initEvE11initialized
  .bss._ZZN15OrangutanMotors4initEvE11initialized
-                0x0080029d        0x1 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
-                0x0080029d                _ZZN15OrangutanMotors4initEvE11initialized
+                0x008002fd        0x1 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanMotors.o)
+                0x008002fd                _ZZN15OrangutanMotors4initEvE11initialized
  .bss._ZZN20OrangutanPushbuttons4initEvE11initialized
-                0x0080029e        0x1 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
-                0x0080029e                _ZZN20OrangutanPushbuttons4initEvE11initialized
+                0x008002fe        0x1 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanPushbuttons.o)
+                0x008002fe                _ZZN20OrangutanPushbuttons4initEvE11initialized
  .bss._ZZN13OrangutanTime4initEvE11initialized
-                0x0080029f        0x1 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
-                0x0080029f                _ZZN13OrangutanTime4initEvE11initialized
+                0x008002ff        0x1 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib\libpololu_atmega328p.a(OrangutanTime.o)
+                0x008002ff                _ZZN13OrangutanTime4initEvE11initialized
  *(COMMON)
- COMMON         0x008002a0       0xdc maze-solve.o
-                0x008002a0                intersections
-                0x008002b4                intersection
- COMMON         0x0080037c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
-                0x0080037c                __brkval
-                0x0080037e                __flp
-                0x00800380                PROVIDE (__bss_end, .)
-                0x000026c0                __data_load_start = LOADADDR (.data)
-                0x00002724                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800300       0xdc maze-solve.o
+                0x00800300                intersections
+                0x00800314                intersection
+ COMMON         0x008003dc        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/../../../../avr/lib/avr5\libc.a(malloc.o)
+                0x008003dc                __brkval
+                0x008003de                __flp
+                0x008003e0                PROVIDE (__bss_end, .)
+                0x000026b6                __data_load_start = LOADADDR (.data)
+                0x0000277a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800380        0x0
-                0x00800380                PROVIDE (__noinit_start, .)
+.noinit         0x008003e0        0x0
+                0x008003e0                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800380                PROVIDE (__noinit_end, .)
-                0x00800380                _end = .
-                0x00800380                PROVIDE (__heap_start, .)
+                0x008003e0                PROVIDE (__noinit_end, .)
+                0x008003e0                _end = .
+                0x008003e0                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -1397,29 +1399,29 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x14b0
+.debug_info     0x00000000     0x1503
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x292 bargraph.o
- .debug_info    0x00000292      0x1a3 follow-segment.o
- .debug_info    0x00000435      0x6e1 main.o
- .debug_info    0x00000b16      0x879 maze-solve.o
- .debug_info    0x0000138f      0x121 turn.o
+ .debug_info    0x00000292      0x1e6 follow-segment.o
+ .debug_info    0x00000478      0x6f6 main.o
+ .debug_info    0x00000b6e      0x874 maze-solve.o
+ .debug_info    0x000013e2      0x121 turn.o
 
-.debug_abbrev   0x00000000      0x777
+.debug_abbrev   0x00000000      0x791
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x170 bargraph.o
- .debug_abbrev  0x00000170      0x11b follow-segment.o
- .debug_abbrev  0x0000028b      0x1ed main.o
- .debug_abbrev  0x00000478      0x21f maze-solve.o
- .debug_abbrev  0x00000697       0xe0 turn.o
+ .debug_abbrev  0x00000170      0x13b follow-segment.o
+ .debug_abbrev  0x000002ab      0x1ed main.o
+ .debug_abbrev  0x00000498      0x219 maze-solve.o
+ .debug_abbrev  0x000006b1       0xe0 turn.o
 
-.debug_line     0x00000000      0xeec
+.debug_line     0x00000000      0xf66
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x16c bargraph.o
- .debug_line    0x0000016c      0x1f4 follow-segment.o
- .debug_line    0x00000360      0x4b1 main.o
- .debug_line    0x00000811      0x519 maze-solve.o
- .debug_line    0x00000d2a      0x1c2 turn.o
+ .debug_line    0x0000016c      0x278 follow-segment.o
+ .debug_line    0x000003e4      0x4b1 main.o
+ .debug_line    0x00000895      0x50f maze-solve.o
+ .debug_line    0x00000da4      0x1c2 turn.o
 
 .debug_frame    0x00000000      0x214
  *(.debug_frame)
@@ -1429,17 +1431,17 @@ END GROUP
  .debug_frame   0x0000016c       0x74 maze-solve.o
  .debug_frame   0x000001e0       0x34 turn.o
 
-.debug_str      0x00000000      0x479
+.debug_str      0x00000000      0x47f
  *(.debug_str)
  .debug_str     0x00000000      0x1ce bargraph.o
                                 0x207 (size before relaxing)
- .debug_str     0x000001ce       0x7a follow-segment.o
-                                0x1fd (size before relaxing)
- .debug_str     0x00000248      0x15a main.o
-                                0x321 (size before relaxing)
- .debug_str     0x000003a2       0xcb maze-solve.o
-                                0x2b2 (size before relaxing)
- .debug_str     0x0000046d        0xc turn.o
+ .debug_str     0x000001ce       0x85 follow-segment.o
+                                0x20d (size before relaxing)
+ .debug_str     0x00000253      0x15a main.o
+                                0x32c (size before relaxing)
+ .debug_str     0x000003ad       0xc6 maze-solve.o
+                                0x2b8 (size before relaxing)
+ .debug_str     0x00000473        0xc turn.o
                                 0x18f (size before relaxing)
 
 .debug_loc      0x00000000      0x809
@@ -1468,13 +1470,13 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0xb8
+.debug_ranges   0x00000000       0xd0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x20 bargraph.o
  .debug_ranges  0x00000020       0x18 follow-segment.o
  .debug_ranges  0x00000038       0x38 main.o
- .debug_ranges  0x00000070       0x30 maze-solve.o
- .debug_ranges  0x000000a0       0x18 turn.o
+ .debug_ranges  0x00000070       0x48 maze-solve.o
+ .debug_ranges  0x000000b8       0x18 turn.o
 
 .debug_macro
  *(.debug_macro)

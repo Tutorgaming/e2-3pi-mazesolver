@@ -22,7 +22,7 @@ void follow_segment()
 
 		// Get the position of the line.
 		unsigned int sensors[5];
-		unsigned int position = read_line(sensors,IR_EMITTERS_ON);
+		unsigned int position = read_line_white(sensors,IR_EMITTERS_ON);
 
 		// The "proportional" term should be 0 when we are on the line.
 		int proportional = ((int)position) - 2000;
@@ -60,18 +60,18 @@ void follow_segment()
 		// sensors 0 and 4 for detecting lines going to the left and
 		// right.
 
-		if(sensors[1] < 100 && sensors[2] < 100 && sensors[3] < 100)
+		if(sensors[1] > 300 && sensors[2] > 300 && sensors[3] > 300)
 		{
 			// There is no line visible ahead, and we didn't see any
 			// intersection.  Must be a dead end.
 			return;
 		}
-		else if(sensors[0] > 200 || sensors[4] > 200)
+		else if(sensors[0] < 200 || sensors[4] < 200)
 		{
 			// Found an intersection.
+			play("<<G32");
 			return;
 		}
-
 	}
 }
 

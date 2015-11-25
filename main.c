@@ -27,7 +27,7 @@
 
 // Introductory messages.  The "PROGMEM" identifier causes the data to
 // go into program space.
-const char welcome_line1[] PROGMEM = " Pololu";
+const char welcome_line1[] PROGMEM = " Pacman";
 const char welcome_line2[] PROGMEM = "3\xf7 Robot";
 const char demo_name_line1[] PROGMEM = "Maze";
 const char demo_name_line2[] PROGMEM = "solver";
@@ -107,7 +107,7 @@ void initialize()
 	while(!button_is_pressed(BUTTON_B))
 	{
 		// Read the sensor values and get the position measurement.
-		unsigned int position = read_line(sensors,IR_EMITTERS_ON);
+		unsigned int position = read_line_white(sensors,IR_EMITTERS_ON);
 
 		// Display the position measurement, which will go from 0
 		// (when the leftmost sensor is over the line) to 4000 (when
@@ -128,7 +128,8 @@ void initialize()
 	print("Go!");		
 
 	// Play music and wait for it to finish before we start driving.
-	play_from_program_space(go);
+	//play_from_program_space(go);
+	play("!L16O5 B>BF#D#B32F#8D# RBC>CGE>CGE<<C<BBF#D#BF#8D# R<<BD#32E32F32 F32F#32G32 G32G#32A32 B");
 	while(is_playing());
 }
 
